@@ -1,0 +1,17 @@
+#Description of supplementary files neede for Figures 1 and 2
+
+Cancers.txt --> List of Cancer Types (TCGA abbreviations).
+Master_List.txt --> List of HR-related genes used ## Have to  modify this file, but for now this will do.
+Final_List.txt --> Final list of samples analized.
+Matrices_all_Final_102genes.Rdat --> Alteration matrices: germline, somatic, loh and copy number status.
+
+samples_looked_at/ <- Directory containing the case Ids, per cancer type, considered in this study.
+LSTs/ <- LST scores for every cancer type considered.
+CN_calls/ <- Total Copy Number calls per cancer type considered.
+LOH_calls/ <- LOH calls per cancer type considered.
+Germline_files/ <-- Germline (Id and gene) alterations per cancer type.
+
+Scores_Combined_All_Cancers_allLST_allMutSig3_Final.txt --> LST scores and Mutational Signature 3 weights for all cancers considered.
+Scores_Combined_All_Cancers_allLST_allMutSigs_DominantSig.txt --> LST scores and all Mutational Signature Weights, as well as sominant Signature for each cancer.
+Scores_Combined_BRCA_OV_PRAD_LSTall_MutSig3all.txt --> LST scores and Mutational Signature 3 weights for HBOC cancers considered.
+Scores_Combined_BRCA_OV_PRAD_allLST_allBRCA.Signatures.txt --> LST scores and Mutational Signature 3 weights for HBOC cancers considered.
