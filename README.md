@@ -32,7 +32,8 @@
 
 # B.) Run the following scripts to prepare the data for analysis in R: 
 	1. cd stddata__2016_01_28/
-	2. Run Somatic_all_cancers_paper.sh
+	2. Run Somatic_all_cancers_paper.sh (Windows, Linux)
+	   Run Somatic_all_cancers_paper_MACOS.sh (Mac OSX)
 	3. Run merge_COAD_READ.sh to create the colo data
 	4. Details of the code and output are provided within the README.md
 
