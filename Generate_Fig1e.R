@@ -141,21 +141,25 @@ colnames <- c("Biallelic_Patho","Biallelic_VUS","Monoallelic_Patho","Monoallelic
 colnames(Boxplot) <- colnames 
 Boxplot <- data.frame(Boxplot)
 
-Pval <- NULL
+Pvalues <- data.frame(Type=rep(NA,4),Pval=rep(NA,4))
 pval <- wilcox.test(Boxplot$Biallelic_Patho,Boxplot$Rest)$p.val
-Pval <-c(Pval,pval)
+Pvalues$Type[1] <- "Biallelic Pathogenic"
+Pvalues$Pval[1] <- pval
 pval <- wilcox.test(Boxplot$Biallelic_VUS,Boxplot$Rest)$p.val
-Pval <-c(Pval,pval)
+Pvalues$Type[2] <- "Biallelic VUS"
+Pvalues$Pval[2] <- pval
 pval <- wilcox.test(Boxplot$Monoallelic_Patho,Boxplot$Rest)$p.val
-Pval <-c(Pval,pval)
+Pvalues$Type[3] <- "Monoallelic Pathogenic"
+Pvalues$Pval[3] <- pval
 pval <- wilcox.test(Boxplot$Monoallelic_VUS,Boxplot$Rest)$p.val
-Pval <-c(Pval,pval)
+Pvalues$Type[4] <- "Monoallelic VUS"
+Pvalues$Pval[4] <- pval
 
 ##Output Pvalues
-print(Pval)
-write.table(Pval,"Results_Figures_and_P_values/P_values_LST_Fig1e.txt",col.names=F,row.names=F,quote=F,sep="\t")
+##print(Pval)
+write.table(Pvalues,"Results_Figures_and_P_Values/P_values_LST_Fig1e.txt",col.names=F,row.names=F,quote=F,sep="\t")
 
-pdf('Results_Figures_and_P_values/Fig1e_LST.pdf')
+pdf('Results_Figures_and_P_Values/Fig1e_LST.pdf')
 boxplot(Boxplot ,ylab = sprintf("%s","LST"), cex.sub=0.75, outline = F)
 stripchart(Boxplot,vertical = T, method = "jitter", pch = 1, col = 1, cex= 1, add = T)
 dev.off()
@@ -164,30 +168,30 @@ dev.off()
 
 ## 1 --> biallelic pathogenic
 
-m3_biallelic_pathogenic <- Score$M3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_1)]
+m3_biallelic_pathogenic <- Score$Signature.3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_1)]
 length(m3_biallelic_pathogenic)
 
 ## 2 --> biallelic VUS
 
-m3_biallelic_vus <- Score$M3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_2)]
+m3_biallelic_vus <- Score$Signature.3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_2)]
 length(m3_biallelic_vus)
 
 
 ## 3 --> monoallelic pathogenic
 
-m3_monoallelic_pathogenic <- Score$M3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_3)]
+m3_monoallelic_pathogenic <- Score$Signature.3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_3)]
 length(m3_monoallelic_pathogenic)
 
 
 
 ## 4 --> monoallelic VUS
 
-m3_monoallelic_vus <- Score$M3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_4)]
+m3_monoallelic_vus <- Score$Signature.3[which(gsub(" ","",as.character(Score$Id))%in%all_lst_4)]
 length(m3_monoallelic_vus)
 
 ## 0 --> unaltered cases
 
-m3_rest <- Score$M3[which(gsub(" ","",as.character(Score$Id))%in%unique(all_rest))]
+m3_rest <- Score$Signature.3[which(gsub(" ","",as.character(Score$Id))%in%unique(all_rest))]
 length(m3_rest)
 
 ##BoxPlot
@@ -199,23 +203,27 @@ colnames(Boxplot_m3) <- colnames
 Boxplot_m3 <- data.frame(Boxplot_m3)
 
 
-Pval <- NULL
-pval_lst <- wilcox.test(Boxplot_m3$Biallelic_Patho,Boxplot_m3$Rest,alternative = "greater")$p.val
-Pval <-c(Pval,pval_lst)
-pval_lst <- wilcox.test(Boxplot_m3$Biallelic_VUS,Boxplot_m3$Rest,alternative = "greater")$p.val
-Pval <-c(Pval,pval_lst)
-pval_lst <- wilcox.test(Boxplot_m3$Monoallelic_Patho,Boxplot_m3$Rest,alternative = "greater")$p.val
-Pval <-c(Pval,pval_lst)
-pval_lst <- wilcox.test(Boxplot_m3$Monoallelic_VUS,Boxplot_m3$Rest,alternative = "greater")$p.val
-Pval <-c(Pval,pval_lst)
+Pvalues <- data.frame(Type=rep(NA,4),Pval=rep(NA,4))
+pval <- wilcox.test(Boxplot_m3$Biallelic_Patho,Boxplot_m3$Rest)$p.val
+Pvalues$Type[1] <- "Biallelic Pathogenic"
+Pvalues$Pval[1] <- pval
+pval <- wilcox.test(Boxplot_m3$Biallelic_VUS,Boxplot_m3$Rest)$p.val
+Pvalues$Type[2] <- "Biallelic VUS"
+Pvalues$Pval[2] <- pval
+pval <- wilcox.test(Boxplot_m3$Monoallelic_Patho,Boxplot_m3$Rest)$p.val
+Pvalues$Type[3] <- "Monoallelic Pathogenic"
+Pvalues$Pval[3] <- pval
+pval <- wilcox.test(Boxplot_m3$Monoallelic_VUS,Boxplot_m3$Rest)$p.val
+Pvalues$Type[4] <- "Monoallelic VUS"
+Pvalues$Pval[4] <- pval
 
 
 ##Output Pvalues
-print(Pval)
-write.table(Pval,"Results_Figures_and_P_values/P_values_Signature_3_Fig1e.txt",col.names=F,row.names=F,quote=F,sep="\t")
+##print(Pval)
+write.table(Pvalues,"Results_Figures_and_P_Values/P_values_Signature_3_Fig1e.txt",col.names=F,row.names=F,quote=F,sep="\t")
 
 # Save figure
-pdf('Results_Figures_and_P_values/Fig1e_Signature3.pdf')
+pdf('Results_Figures_and_P_Values/Fig1e_Signature3.pdf')
 boxplot(Boxplot_m3 ,ylab = sprintf("%s","Signature 3"), cex.sub=0.75, outline = F)
 stripchart(Boxplot_m3,vertical = T, method = "jitter", pch = 1, col = 1, cex= 1, add = T)
 dev.off()

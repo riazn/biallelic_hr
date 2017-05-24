@@ -2,7 +2,7 @@
 rm(list=ls())
 #Genes
 
-gene_list_hr <- read.delim("Supplementary_Files/Master_List_old.txt", header=F)
+gene_list_hr <- read.delim("Supplementary_Files/Master_List.txt", header=F)
 gene_list_hr <- gsub(" ","",as.character(gene_list_hr$V1))
 length(gene_list_hr)
 Genes <- gene_list_hr
@@ -311,7 +311,7 @@ Dat_top16 <- Dat[which(Dat$Gene%in%top_16_bi_patho_genes),]
 dim(Dat_top16)
 length(unique(Dat_top16$Gene))
 
-write.table(Dat_top16,"Results_Figures_and_P_values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt", col.names=T,row.names=F,quote = F,sep="\t")
+write.table(Dat_top16,"Results_Figures_and_P_Values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt", col.names=T,row.names=F,quote = F,sep="\t")
 
 ##Use cbio portal --> tools --> Oncoprinter:
 ##http://www.cbioportal.org/
@@ -324,7 +324,7 @@ write.table(Dat_top16,"Results_Figures_and_P_values/Oncoprint_HBOCs_top16_LST15_
 ##Restric HBOC hrd matrix to those 16 genes:
 ##Read Oncoprint for HBOCs top 16 altered genes and high LST>=15 OR Dominant Mutational Signature 3
 
-Dat_top16 <- read.delim("Results_Figures_and_P_values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt", header=T,sep="\t")
+Dat_top16 <- read.delim("Results_Figures_and_P_Values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt", header=T,sep="\t")
 
 
 ## WExT pvalue without VUS
@@ -381,7 +381,7 @@ for(i in 1:length(Genes)){
 }
 
 getwd()
-write.table(t(List),"Results_Figures_and_P_values/genes_top_16_genes_without_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
+write.table(t(List),"Results_Figures_and_P_Values/genes_top_16_genes_without_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
 
 
 ##V vector with 2^k entries. Here k==16 number of genes
@@ -396,7 +396,7 @@ ctable <- table(foo)
 df <- melt(ctable, varnames=Genes, value.name="Freq")
 vec <- df$Freq
 length(vec)
-write.table(t(vec),"Results_Figures_and_P_values/vec_top_16_genes_without_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
+write.table(t(vec),"Results_Figures_and_P_Values/vec_top_16_genes_without_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
 
 
 ## WExT pvalue with VUS
@@ -450,7 +450,7 @@ for(i in 1:length(Genes)){
   List <- c(List,len);
 }
 
-write.table(t(List),"Results_Figures_and_P_values/genes_top_16_genes_with_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
+write.table(t(List),"Results_Figures_and_P_Values/genes_top_16_genes_with_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
 
 
 
@@ -464,6 +464,6 @@ ctable <- table(foo)
 df <- melt(ctable, varnames=Genes, value.name="Freq")
 vec <- df$Freq
 length(vec)
-write.table(t(vec),"Results_Figures_and_P_values/vec_top_16_genes_with_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
+write.table(t(vec),"Results_Figures_and_P_Values/vec_top_16_genes_with_VUS.txt",col.names=F,row.names=F,quote=F,sep=",")
 
 

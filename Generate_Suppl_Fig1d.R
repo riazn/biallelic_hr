@@ -113,7 +113,7 @@ rownames(table) <-  c("Germ Patho LOH","Germ Comp Het","Som Patho LOH","Som Comp
 
 #Plot
 counts <- table[-6,]
-outfile <- "Results_Figures_and_P_values/Supplementary_Fig1d.pdf"
+outfile <- "Results_Figures_and_P_Values/Supplementary_Fig1d.pdf"
 pdf(outfile,width=10,height=7)
 h <- barplot(counts,xaxt="n", main="",cex.main=0.9, ylab="Prevalence", cex.lab=1.5
              ,col=c("black","blue","grey","lightblue","darkgreen")

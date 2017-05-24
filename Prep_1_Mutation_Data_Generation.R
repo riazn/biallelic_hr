@@ -19,7 +19,7 @@ myMatrices_new <- function(Cancer,    #Cancer type TCGA abreviation
                        SNP,      #If TRUE write down somMutsnps and germMutsnps file
                        score="LST")       #Default name of score is LST  
   {
-    MDIR <- paste("stddata__2016_01_28/", Cancer, sep="");
+    MDIR <- paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128",sep="");
     
     f <- GeneList 
     gene_list <-scan(file=f, what="character");
@@ -189,7 +189,7 @@ for (k  in 1:length(pan_cancer_types))
     Cancer = Cancer,
     GeneList = "Supplementary_Files/Master_List.txt",
     LSTSCORE = sprintf("Supplementary_Files/LSTs/LST-%s.dat", Cancer),
-    Somatic = paste("stddata__2016_01_28/", Cancer, "/LoF_Somatic.dat", sep=""), 
+    Somatic = paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/","LoF_Somatic.dat", sep=""), 
     Germline = sprintf("Supplementary_Files/Germline_files/LoF_germline_Ruomu_Git_%s_Id_Gene_R.txt",Cancer),
     LOH = sprintf("Supplementary_Files/LOH_calls/loh_%s_header.dat",Cancer),
     CN = sprintf("Supplementary_Files/CN_calls/totalcn_%s_header.dat",Cancer),
@@ -199,34 +199,34 @@ for (k  in 1:length(pan_cancer_types))
     Cancer = Cancer,
     GeneList = "Supplementary_Files/Master_List.txt",
     LSTSCORE = sprintf("Supplementary_Files/LSTs/LST-%s.dat", Cancer),
-    Somatic =  paste("stddata__2016_01_28/", Cancer, "/Somatic_TCGA_VUS.txt", sep=""),
+    Somatic =  paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/","Somatic_TCGA_VUS.txt", sep=""),
     Germline = sprintf("Supplementary_Files/Germline_files/LoF_germline_Ruomu_Git_%s_Id_Gene_R.txt",Cancer),
     LOH = sprintf("Supplementary_Files/LOH_calls/loh_%s_header.dat",Cancer),
     CN = sprintf("Supplementary_Files/CN_calls/totalcn_%s_header.dat",Cancer),
     SNP = T)
   
-  somaticMutnonsyn <- read.table(paste("stddata__2016_01_28/", Cancer, "/somaticMutsnps.csv", sep=""), sep="\t", header = T)
+  somaticMutnonsyn <- read.table(paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/", "somaticMutsnps.csv", sep=""), sep="\t", header = T)
   somaticMutnonsyn <- somaticMutnonsyn[which(as.character(rownames(somaticMutnonsyn))%in%samples_final),]
 
-  somaticMut <- read.table(paste("stddata__2016_01_28/", Cancer, "/somaticMut.csv", sep=""), sep="\t", header = T)
+  somaticMut <- read.table(paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/", "somaticMut.csv", sep=""), sep="\t", header = T)
   somaticMut <- somaticMut[which(as.character(rownames(somaticMut))%in%samples_final),]
 
-  germlineMut <- read.table(paste("stddata__2016_01_28/", Cancer, "/germlineMut.csv", sep=""), sep="\t", header = T)
+  germlineMut <- read.table(paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/", "germlineMut.csv", sep=""), sep="\t", header = T)
   germlineMut <- germlineMut[which(as.character(rownames(germlineMut))%in%samples_final),]
 
-  LST <- read.table(paste("stddata__2016_01_28/", Cancer, "/LST.csv", sep=""), sep="\t", header = T)
+  LST <- read.table(paste("stddata__2016_01_28/",sprintf("%s/",Cancer), "20160128/", "LST.csv", sep=""), sep="\t", header = T)
   LST <- LST[which(as.character(rownames(LST))%in%samples_final),]
 
-  lohMut <- read.table(paste("stddata__2016_01_28/", Cancer, "/lohMut.csv", sep=""), sep="\t", header = T)
+  lohMut <- read.table(paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/", "lohMut.csv", sep=""), sep="\t", header = T)
   lohMut <- lohMut[which(as.character(rownames(lohMut))%in%samples_final),]
 
-  cnvMut <- read.table(paste("stddata__2016_01_28/", Cancer, "/cnvMut.csv", sep=""), sep="\t", header = T)
+  cnvMut <- read.table(paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/", "cnvMut.csv", sep=""), sep="\t", header = T)
   cnvMut <- cnvMut[which(as.character(rownames(cnvMut))%in%samples_final),]
 
-  Somatic_Trunc <- read.delim(paste("stddata__2016_01_28/", Cancer, "/LoF_Somatic.dat", sep=""), header =F, sep ="\t")
+  Somatic_Trunc <- read.delim(paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/", "LoF_Somatic.dat", sep=""), header =F, sep ="\t")
   Somatic_Trunc <- Somatic_Trunc[which(as.character(Somatic_Trunc$V1)%in%samples_final),]
 
-  Somatic_nonsyn <- read.delim(paste("stddata__2016_01_28/", Cancer, "/Somatic_TCGA_VUS.txt", sep=""), header =F, sep ="\t")
+  Somatic_nonsyn <- read.delim(paste("stddata__2016_01_28/", sprintf("%s/",Cancer), "20160128/","Somatic_TCGA_VUS.txt", sep=""), header =F, sep ="\t")
   Somatic_nonsyn <- Somatic_nonsyn[which(as.character(Somatic_nonsyn$V1)%in%samples_final),]
 
   Mast[[k]] <- list(som_vus=somaticMutnonsyn,som_LoF=somaticMut,germ=germlineMut,lst=LST,loh=lohMut,cnv=cnvMut,Som_vus=Somatic_nonsyn,Som_LoF=Somatic_Trunc)

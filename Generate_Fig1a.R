@@ -104,7 +104,7 @@ rownames(table_germ_som) <- c("Germline Biallelic Pathogenic","Somatic Biallelic
 
 #Plot
 counts <- table_germ_som
-pdf('Results_Figures_and_P_values/Fig1a.pdf')
+pdf('Results_Figures_and_P_Values/Fig1a.pdf')
 h <- barplot(counts,xaxt="n", main="",cex.main=0.9, ylab="Altered Tumors", cex.lab=1.5
              ,col=c("black","grey")
              ,beside=F)

@@ -77,7 +77,7 @@ rownames(table) <-  c("Biallelic Pathogenic","Monoallelic Pathogenic")
 
 #Plot
 counts <- table[,1:23]
-outfile <- "Results_Figures_and_P_values/Supplementary_Fig1b.pdf"
+outfile <- "Results_Figures_and_P_Values/Supplementary_Fig1b.pdf"
 pdf(outfile,width=10,height=7)
 h <- barplot(counts,xaxt="n", main="",cex.main=0.9, ylab="Prevalence", cex.lab=1.5
              ,col=c("black","grey")

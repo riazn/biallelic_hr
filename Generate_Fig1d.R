@@ -183,7 +183,7 @@ colnames <- c("Biallelic_Patho","Biallelic_VUS","Monoallelic_Patho","Monoallelic
 colnames(Boxplot3) <- colnames 
 Boxplot3 <- data.frame(Boxplot3)
 
-pdf('Results_Figures_and_P_values/Fig1d.pdf')
+pdf('Results_Figures_and_P_Values/Fig1d.pdf')
 boxplot(Boxplot3 ,ylab = sprintf("%s","LST"), cex.sub=0.75, outline = F)
 stripchart(Boxplot2,vertical = T, method = "jitter", pch = 1, col = 1, cex= 1, add = T)
 stripchart(Boxplot1,vertical = T, method = "jitter", pch = 20, col = 2, cex= 1, add = T)
