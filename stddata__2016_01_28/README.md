@@ -7,7 +7,8 @@
 
 
 # Run main script from command line:
-    bash Somatic_all_cancers_paper.sh
+    bash Somatic_all_cancers_paper.sh (Windows, Linux)
+    bash Somatic_all_cancers_paper_MACOS.sh ( Mac OSX)
 
 
 	###Scripts contained into the main script from above:
