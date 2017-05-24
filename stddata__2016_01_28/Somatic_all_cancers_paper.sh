@@ -6,19 +6,19 @@ for k in `seq 1 $size`; do
 
 cancer=$(awk -v var=$k '{if(NR==var) print $1}' Cancers.txt)
 
-cd $cancer/
+cd $cancer/20160128/
 
 echo $cancer
 
 tar -zxvf gdac.broadinstitute.org_${cancer}.Mutation_Packager_Oncotated_Calls.Level_3.2016012800.0.0.tar.gz
 
-bash ../Somatic_all_entries_paper.sh gdac.broadinstitute.org_${cancer}.Mutation_Packager_Oncotated_Calls.Level_3.2016012800.0.0 
+bash ../../Somatic_all_entries_paper.sh gdac.broadinstitute.org_${cancer}.Mutation_Packager_Oncotated_Calls.Level_3.2016012800.0.0 
 
-bash ../Somatic_formatting_paper.sh Somatic_TCGA_merged_all_entries.maf 
+bash ../../Somatic_formatting_paper.sh Somatic_TCGA_merged_all_entries.maf 
 
-bash ../Somatic_all_entries_VUS_LoF_paper.sh Somatic_TCGA_merged_all_entries_formatted_header.maf 
+bash ../../Somatic_all_entries_VUS_LoF_paper.sh Somatic_TCGA_merged_all_entries_formatted_header.maf 
 
-cd ../
+cd ../../
 
 done
 
