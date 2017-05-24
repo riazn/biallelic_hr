@@ -1,4 +1,4 @@
-# Description of supplementary files needed for Figures 1 and 2:
+# Description of supplementary files needed for Figures 1 and 2
 
     Cancers.txt --> List of Cancer Types (TCGA abbreviations, supplied by the authors).
     Master_List.txt --> List of HR-related genes used (supplied by the authors).
