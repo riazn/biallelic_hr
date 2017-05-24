@@ -1,4 +1,24 @@
-# Download maf files from TCGA Firehose dated 2016/01/28: 
+# Pan-cancer analysis of bi-allelic alterations in homologous recombination (HR) DNA repair 
+	The following provides step by step instructions to reproduce key
+	the results from the manuscript above. Results can be reproduced
+	from the very beginning by downloading MAF files from TCGA (start at
+	step A below) or from a precomputed matrix of mutation and copy
+	numbers calls by skipping to step (D.)
+	
+	Pre-computed results included are: Large-scale transitions (LST) values
+	have been provided as these require access to Affy SNP arrays (TCGA
+	Level I) data access. Similarly the proportions of mutations due to
+	signature 3 have already also been provided. Loss-of-heterozygosity and
+	total copy number results are also provided as these require access to
+	TCGA Level I data (SNP6 Arrays)
+	
+	Please note the following software is required:
+			- R version 3.x.x
+			- 
+	This code has been tested on Mac OSX and Linux environments
+	Please email questions to riazn@mskcc.org
+
+# A.) Download maf files from TCGA Firehose dated 2016/01/28: 
 	- firehose_get (provided in the folder), which can be obtained from: 
 	  https://confluence.broadinstitute.org/display/GDAC/Download
 
@@ -9,12 +29,15 @@
 		Note: More cancer types data are downloaded than the 24 cancer types used in this paper.
 
 
-# Run the following scripts to prepare the data for analysis and plotting: 
+# B.) Run the following scripts to prepare the data for analysis in R: 
 	1. Run stddata__2016_01_28/Somatic_all_cancers_paper.sh
 	2. Run stddata__2016_01_28/merge_COAD_READ.sh to create the colo data
 
 
-# Run the following R codes in sequence to generate figures and P-values: 
+# C.) Uncompress copy number data
+	1. cd Supplementary_Files; tar -zxvf CopyNumberData.tgz
+
+# D.) Run the following R codes in sequence to generate figures and P-values: 
 
 	1. Generate the mutation and allele specific copy number matrix:
 		Prep_1_Mutation_Data_Generation.R 
