@@ -3,7 +3,7 @@
 	results from the manuscript above. Results can be reproduced
 	from the very beginning by downloading MAF files from TCGA (start at
 	step A below) or from a precomputed matrix of mutation and copy
-	numbers calls by skipping to step (D.)
+	numbers calls by skipping to step (D.3)
 	
 	Pre-computed results included are: Large-scale transitions (LST) values
 	have been provided as these require access to Affy SNP arrays (TCGA
