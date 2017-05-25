@@ -310,7 +310,7 @@ Dat_top16 <- Dat[which(Dat$Gene%in%top_16_bi_patho_genes),]
 dim(Dat_top16)
 length(unique(Dat_top16$Gene))
 
-write.table(Dat_top16,"Results_Figures_and_P_values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt", col.names=T,row.names=F,quote = F,sep="\t")
+write.table(Dat_top16,"Results_Figures_and_P_Values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt", col.names=T,row.names=F,quote = F,sep="\t")
 
 ##Use cbio portal --> tools --> Oncoprinter:
 ##http://www.cbioportal.org/
