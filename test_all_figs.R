@@ -13,8 +13,8 @@ source("Generate_Fig1d.R")
 print("Test Generate_Fig1e.R")
 source("Generate_Fig1e.R")
 
-print("Test Generate_Fig2a.R")
-source("Generate_Fig2a.R")
+print("Test Generate_Fig2a_and_Input_for_WExT.R")
+source("Generate_Fig2a_and_Input_for_WExT.R")
 
 print("Test suppl fig 1a")
 source("Generate_Suppl_Fig1a.R")
