@@ -6,7 +6,7 @@ rm(list=ls())
 
 Score <- read.delim("Supplementary_Files/Scores_Combined_BRCA_OV_PRAD_LSTall_MutSig3all.txt",header=T,sep="\t")
 head(Score)
-mat <- read.delim("Supplementary_Files/matrix_Biallelic_Monoallelic_Pathogenic_VUS_All_cancers_Mutation_Types_Paper.txt",header=T,sep="\t")
+mat <- read.delim("Supplementary_Files/Matrix_Biallelic_Monoallelic_Pathogenic_VUS_All_cancers_Mutation_Types_Paper.txt",header=T,sep="\t")
 dim(mat)
 
 mat_cancers <- mat[,which(gsub("\\.","-",colnames(mat))%in%gsub(" ","",as.character(Score$Id)))]
