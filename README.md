@@ -25,6 +25,9 @@
 	- firehose_get (provided in the folder; make it an executable by typing 'chmod +x firehose_get'), 
 	  which can be obtained from: 
 	  https://confluence.broadinstitute.org/display/GDAC/Download
+	  
+	  Note: firehose needs wget to work. Default windows git installation doesn't have wget. 
+	  	We prompt Windows users to use wget from cygwin or babun (linux emulator on windows to run firehose).
 
 	- Use firehose_get command below to download maf files:
 
