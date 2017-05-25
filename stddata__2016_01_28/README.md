@@ -2,6 +2,8 @@
     	1.) LoF_Somatic.dat (Loss of Function somatic mutations -LoF-) 
     	2.) Somatic_TCGA_VUS.txt (Somatic Variants of Unknown Significance -VUS-)
 		^-- PEDRO:how are these created? (maybe this should be at end of README??)
+		^-- Response: I do not think it is necessary, as it is briefly described below already.
+		^--           The interested reader has the definition of LoF in the online methods section in any case.
 
 # List of Cancer types
     Cancers.txt --> List of 24 cancer types
@@ -12,7 +14,7 @@
     bash Somatic_all_cancers_paper_MACOS.sh ( Mac OSX)
     ###
     With this script we process the individual maf files per cancer type, merge them and 
-    extract, all somatic calls that are LoF and those that are VUS.
+    extract all somatic calls that are LoF and those that are VUS.
     
 
 
