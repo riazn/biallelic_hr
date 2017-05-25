@@ -39,7 +39,7 @@
 	1. cd stddata__2016_01_28/
 	2. Run Somatic_all_cancers_paper.sh (Windows, Linux)
 	   Run Somatic_all_cancers_paper_MACOS.sh (Mac OSX)
-	   Note: ignore the 'rm Somatic_TCGA_merged_all_entries.maf' warning
+	   Note: ignore the 'rm Somatic_TCGA_merged_all_entries.maf: No such file or directory' warning
 	   
 	3. Run merge_COAD_READ.sh to create the colo data
 	4. Details of the code and output are provided within the README.md
