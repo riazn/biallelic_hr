@@ -106,14 +106,19 @@
 
  
 	5. Determine HR genes are mutually exclusive in HBOC cancers
-		   - Run Generate_Fig2a_and_Input_for_WExT.R:
-		  Generates --> Results_Figures_and_P_Values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt
+		 - Run Generate_Fig2a_and_Input_for_WExT.R:
+		 Generates --> Results_Figures_and_P_Values/Oncoprint_HBOCs_top16_LST15_OR_Dominant_MutSig3.txt
 
-		  - Refer to Results_Figures_and_P_Values/README.md for further instructions on how to get the
-		  mutual exclusivity test p  values using WExT  
-		  
-		  (PEDRO: THIS IS NOT GOOD LOCATION FOR THIS FILE; can include instructions here)
-		  Python codes provided here for the above 
+		 - To get the mutual exclusivity test p values first install WExT: 
+	 	 https://github.com/raphael-group/wext
+
+	         - Run Mutual exclusivity test Without VUS
+		 time python wext_run_comet_without_VUS.py
+
+		 - Mutual exclusivity test With VUS
+		 time python wext_run_comet_with_VUS.py
+		
+		 ### Python codes provided here for the above 
 		  		- wext_run_comet_with_VUS.py 
 		  		- wext_run_comet_without_VUS.py
 
