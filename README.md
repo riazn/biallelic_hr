@@ -28,7 +28,7 @@
 
 	- Use firehose_get command below to download maf files:
 
-		`./firehose_get -tasks -b -only Mutation_Packager_Oncotated_Calls.Level_3 stddata 2016_01_28`
+		./firehose_get -tasks -b -only Mutation_Packager_Oncotated_Calls.Level_3 stddata 2016_01_28
 
 		Note: More cancer types data are downloaded than the 24 cancer types used in this paper.
 		
@@ -39,6 +39,8 @@
 	1. cd stddata__2016_01_28/
 	2. Run Somatic_all_cancers_paper.sh (Windows, Linux)
 	   Run Somatic_all_cancers_paper_MACOS.sh (Mac OSX)
+	   Note: ignore the 'rm Somatic_TCGA_merged_all_entries.maf' warning
+	   
 	3. Run merge_COAD_READ.sh to create the colo data
 	4. Details of the code and output are provided within the README.md
 	
