@@ -60,7 +60,7 @@ for (i in 1:length(pan_cancer_types))
 
 
 rownames(List_All_Genes_HR) <- pan_cancer_types
-write.table(List_All_Genes_HR,"Results_Figures_and_P_values/Alterations_per_Cancer_across_genes_HR_Pathway_ordered_Biallelic_Monoallelic_Paper.txt", col.names=T,row.names=T,quote=F,sep="\t")
+write.table(List_All_Genes_HR,"Results_Figures_and_P_Values/Alterations_per_Cancer_across_genes_HR_Pathway_ordered_Biallelic_Monoallelic_Paper.txt", col.names=T,row.names=T,quote=F,sep="\t")
 
 
 
