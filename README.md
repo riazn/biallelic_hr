@@ -56,6 +56,9 @@
 	
 
 # D.) Run the following R codes in sequence to generate figures and P-values: 
+	Make sure to be in the directory the repository was downloaded to, to run 
+	the scripts
+
   	1. Generate the mutation and allele specific copy number matrix:
 		Prep_1_Mutation_Data_Generation.R 
 		output --> Supplementary_Files/Matrices_all_Final_102genes.Rdat
